@@ -171,7 +171,7 @@ const REPO_URL = "https://github.com/BABEL-ON-APP/babel-on";
       if (i) rawEl.append(" ");
       rawEl.append(s);
       demoGlow.target = 0.75 + Math.random() * 0.25;
-    }, 190 + word.length * 34 + (del ? 120 : 0)]);
+    }, 140 + word.length * 27 + (del ? 90 : 0)]); // about 220 words per minute
   });
   steps.push([() => { setStatus("Cleanup", true); }, 500]);
   steps.push([() => {
