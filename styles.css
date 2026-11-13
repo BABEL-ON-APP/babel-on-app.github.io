@@ -112,8 +112,9 @@ h3 {
 .btn:hover { background: var(--bg); color: var(--fg); }
 
 /* the GitHub star count inside a link or a button (main.js fills it) */
-.stars { margin-left: 0.9em; padding-left: 0.9em; border-left: 1px solid currentColor; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.stars[hidden] { display: none; }
+.stars { margin-left: 0.7em; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stars__icon { color: #e3b341; } /* GitHub star gold: the one colour outside the glow */
+.stars__n:not(:empty) { margin-left: 0.45em; }
 
 .quiet {
   color: var(--dim); font-size: 0.95rem; text-decoration: none;

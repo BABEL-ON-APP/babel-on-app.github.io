@@ -12,15 +12,15 @@ const REPO_URL = "https://github.com/BABEL-ON-APP/babel-on";
 
   // ---------- the GitHub star count ----------
   // One request to the public GitHub API, kept for one hour in this browser.
-  // If the request fails (no network, a private repository, a rate limit), the count stays hidden.
+  // If the request fails (no network, a private repository, a rate limit), the gold star shows with no number.
   (async () => {
     const KEY = "babelon-stars", HOUR = 3600e3;
     const show = (n) => {
+      if (!(n >= 1)) return; // no number for 0 or a bad value: the gold star shows alone
       const text = new Intl.NumberFormat("en", { notation: n >= 10000 ? "compact" : "standard", maximumFractionDigits: 1 }).format(n);
       document.querySelectorAll("[data-stars]").forEach((el) => {
-        el.textContent = "\u2605 " + text;
+        el.textContent = text;
         el.setAttribute("aria-label", text + " stars on GitHub");
-        el.hidden = false;
       });
     };
     try {
