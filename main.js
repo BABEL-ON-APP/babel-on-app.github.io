@@ -263,7 +263,7 @@ const REPO_URL = "https://github.com/BABEL-ON-APP/babel-on";
   const copyBtn = document.getElementById("copy");
   const copyLive = document.getElementById("copy-live");
   const cmd = document.getElementById("build-cmd");
-  if (navigator.clipboard && window.isSecureContext) {
+  if (copyBtn && cmd && navigator.clipboard && window.isSecureContext) {
     copyBtn.hidden = false;
     let back = 0;
     copyBtn.addEventListener("click", async () => {

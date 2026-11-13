@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BABEL ON — local dictation for the Mac</title>
-<meta name="description" content="BABEL ON is free, open-source dictation for the Mac: press one key, speak, and the text goes in at your cursor, with all speech recognition on your machine.">
+<title>BABEL ON — private dictation for the Mac</title>
+<meta name="description" content="BABEL ON is private dictation for the Mac: press one key, speak, and clean text goes in at your cursor. All speech recognition runs on your machine. One-time purchase, no subscription.">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
-<link rel="canonical" href="https://babel-on-app.github.io/">
+<link rel="canonical" href="https://babelon.cc/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BABEL ON">
-<meta property="og:title" content="BABEL ON — local dictation for the Mac">
-<meta property="og:description" content="Press one key, speak, and the text goes in at your cursor. Local, open source, free.">
-<meta property="og:url" content="https://babel-on-app.github.io/">
-<meta property="og:image" content="https://babel-on-app.github.io/assets/og.png">
+<meta property="og:title" content="BABEL ON — private dictation for the Mac">
+<meta property="og:description" content="Press one key, speak, and the text goes in at your cursor. Private, local, no subscription.">
+<meta property="og:url" content="https://babelon.cc/">
+<meta property="og:image" content="https://babelon.cc/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="BABEL ON tower logo">
@@ -29,7 +29,7 @@
 
 <header class="top">
   <div class="wrap top__in">
-    <!-- The GitHub link: main.js sets every [data-repo] link from one constant (REPO_URL). -->
+    <!-- The GitHub link: main.js sets every [data-repo] link from one constant (REPO_URL). The repository is the public home of the app; it has no code. -->
     <a class="top__link" href="https://www.youtube.com/@BABELONAI" rel="noopener">YouTube</a>
     <a class="top__link" data-repo href="https://github.com/BABEL-ON-APP/babel-on">GitHub<span class="stars"><span class="stars__icon" aria-hidden="true">★</span><span class="stars__n" data-stars></span></span></a>
   </div>
@@ -54,8 +54,8 @@
       <h1 id="hero-h">BABEL ON</h1>
       <p class="hero__tag"><span>Intelligent dictation.</span> <span>Locally hosted.</span> <span>No subscription.</span></p>
       <div class="hero__cta">
-        <a class="btn" data-repo href="https://github.com/BABEL-ON-APP/babel-on">Star on GitHub<span class="stars"><span class="stars__icon" aria-hidden="true">★</span><span class="stars__n" data-stars></span></span></a>
-        <a class="quiet" href="#demo">How it works <span aria-hidden="true">↓</span></a>
+        <a class="btn" href="#get">Buy <span class="btn__price">$3</span></a>
+        <a class="btn btn--ghost" data-repo href="https://github.com/BABEL-ON-APP/babel-on">Star on GitHub<span class="stars"><span class="stars__icon" aria-hidden="true">★</span><span class="stars__n" data-stars></span></span></a>
       </div>
     </div>
   </section>
@@ -168,9 +168,9 @@
           <p>No plan and no telemetry. The only network use is one model download from Hugging Face, and you start it.</p>
         </div>
         <div class="trio__item">
-          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M17 15 7 24l10 9M31 15l10 9-10 9M27 10l-6 28"/></svg>
-          <h3>Open source, MIT.</h3>
-          <p>Free, under the MIT license. Built from open models.</p>
+          <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="15"/><path d="M17 24.500l5 5 9.500-10.500"/></svg>
+          <h3>One-time purchase.</h3>
+          <p>Pay one time. $3 at launch. No monthly fee.</p>
         </div>
       </div>
     </div>
@@ -278,7 +278,7 @@
       <header class="head">
         <span class="idx" aria-hidden="true">06</span>
         <h2 id="get-h">Get it.</h2>
-        <p>Build the app from source. There is no binary download.</p>
+        <p>One-time purchase. No subscription.</p>
       </header>
 
       <div class="get">
@@ -291,21 +291,17 @@
           </ul>
         </div>
 
-        <div class="build">
-          <div class="code">
-            <div class="code__bar">
-              <span>Build steps</span>
-              <button class="ctl" id="copy" type="button" hidden>Copy</button>
-            </div>
-<pre tabindex="0" aria-label="Build steps"><code id="build-cmd">git clone <span data-repo-clone>https://github.com/BABEL-ON-APP/babel-on.git</span>
-cd babel-on
-tools/fetch-llama.sh
-tools/bundle.sh
-open "build/BABEL ON.app"</code></pre>
-          </div>
-          <p class="sr-only" id="copy-live" role="status" aria-live="polite"></p>
-          <p class="build__note">The app guides you through the model download and the permissions on its first run.</p>
-          <a class="btn" data-repo href="https://github.com/BABEL-ON-APP/babel-on">View on GitHub<span class="stars"><span class="stars__icon" aria-hidden="true">★</span><span class="stars__n" data-stars></span></span></a>
+        <div class="buy">
+          <p class="buy__price"><span class="buy__num">$3</span><span class="buy__note">Launch price. $5 after launch.</span></p>
+          <ul class="buy__list">
+            <li>The signed app for your Mac</li>
+            <li>No account and no subscription</li>
+            <li>Your voice stays on your Mac</li>
+          </ul>
+          <!-- The store is not open yet. Replace this span with the checkout link. -->
+          <span class="btn btn--off" id="buy" role="link" aria-disabled="true">Sales open soon</span>
+          <p class="build__note">Star the repository on GitHub to get the news when sales open.</p>
+          <a class="btn btn--ghost" data-repo href="https://github.com/BABEL-ON-APP/babel-on">Star on GitHub<span class="stars"><span class="stars__icon" aria-hidden="true">★</span><span class="stars__n" data-stars></span></span></a>
         </div>
       </div>
     </div>
@@ -315,7 +311,7 @@ open "build/BABEL ON.app"</code></pre>
 <!-- 8. FOOTER -->
 <footer class="foot">
   <div class="wrap foot__in">
-    <p>BABEL ON is open source under the MIT license. MIT applies to the code only, not the models. BABEL ON works in English only. The text can have errors.</p>
+    <p>BABEL ON works in English only. The text can have errors. The speech and cleanup models have their own licenses.</p>
     <a data-repo href="https://github.com/BABEL-ON-APP/babel-on">GitHub</a>
   </div>
 </footer>
