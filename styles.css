@@ -105,12 +105,25 @@ h3 {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 3.25rem; padding: 0 2rem;
   background: var(--fg); color: var(--bg);
-  border: 1px solid var(--fg); border-radius: 2px;
+  border: 1px solid var(--fg); border-radius: 999px;
+  position: relative; isolation: isolate;
   font-weight: 700; font-size: 1.05rem; letter-spacing: 0.2em; text-decoration: none;
   transition: background-color 0.18s, color 0.18s;
 }
 .btn:hover { background: var(--bg); color: var(--fg); }
 
+/* the buy button: a white pill with the chromatic glow behind it */
+.btn--buy { min-height: 3.5rem; padding: 0; border: 0; background: transparent; color: var(--bg); font-size: 1.12rem; transition: transform 0.18s; }
+.btn--buy::before, .btn--buy::after {
+  content: ""; position: absolute; z-index: 0; border-radius: inherit;
+  background: conic-gradient(from 40deg, #ff2e54, #ff9400, #ffd60a, #30d159, #63d1ff, #0a85ff, #bf59f2, #ff2e54);
+}
+.btn--buy::before { inset: 0; }
+.btn--buy::after { inset: -3px; filter: blur(13px); opacity: 0.6; transition: opacity 0.18s, inset 0.18s; }
+.btn__in { position: relative; z-index: 1; display: inline-flex; align-items: center; margin: 2px; min-height: calc(3.5rem - 4px); padding: 0 2.3rem; border-radius: inherit; background: var(--fg); color: var(--bg); }
+.btn--buy:hover { background: transparent; color: var(--bg); transform: translateY(-1px); }
+.btn--buy:hover::after { opacity: 1; inset: -7px; }
+@media (prefers-reduced-motion: reduce) { .btn--buy, .btn--buy::after { transition: none; } .btn--buy:hover { transform: none; } }
 .btn--ghost { background: transparent; color: var(--fg); border-color: var(--line-strong); }
 .btn--ghost:hover { border-color: var(--fg); }
 .btn--off { background: transparent; color: var(--dim); border-color: var(--line-strong); border-style: dashed; cursor: default; }
@@ -260,6 +273,7 @@ h3 {
 .shapes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .shape { display: flex; flex-direction: column; min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); background: linear-gradient(180deg, #0e0e0e, #040404); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06); }
 .shape__for { margin-top: 0.25rem; color: var(--dim); font-size: 0.85rem; }
+.shape__said { margin-top: 0.6rem; color: var(--dim); font-family: var(--mono); font-size: 0.9rem; }
 .shape__out { flex: 1; margin: 1.25rem 0; padding: 1.1rem 1.2rem; background: #000; box-shadow: inset 0 0.4rem 1rem rgba(0, 0, 0, 0.8); border: 1px solid var(--line); border-radius: 2px; font-size: 0.98rem; }
 .shape__out p + p { margin-top: 1em; }
 .shape__out--tight p + p { margin-top: 0; }
